@@ -1,0 +1,247 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Hypertension Stage Prediction</h1>
+        <p class="hero-subtitle">A Machine Learning-based system for predicting hypertension stages using patient data</p>
+        <div class="hero-description">
+            <p>This project demonstrates the application of machine learning algorithms to predict hypertension stages based on various patient parameters including age, symptoms, medical history, and blood pressure readings.</p>
+        </div>
+        <a href="{{ url_for('predict') }}" class="cta-button">
+            <span>Start Prediction</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<div class="project-info">
+    <h2 class="section-title">About This Project</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="info-icon">🎯</div>
+            <h3>Objective</h3>
+            <p>To develop a machine learning model that can accurately predict hypertension stages using patient data.</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">🔬</div>
+            <h3>Technology</h3>
+            <p>Built using Python, Flask, and machine learning algorithms for data analysis and prediction.</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">📊</div>
+            <h3>Features</h3>
+            <p>Interactive web interface for data input and real-time prediction results.</p>
+        </div>
+    </div>
+</div>
+
+<div class="how-to-use">
+    <h2 class="section-title">How to Use</h2>
+    <div class="steps-container">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Enter Data</h3>
+            <p>Fill in the required patient information and symptoms.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Get Prediction</h3>
+            <p>Receive instant hypertension stage prediction based on the input data.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>View Results</h3>
+            <p>Review the prediction results and recommendations.</p>
+        </div>
+    </div>
+</div>
+
+<div class="repo-link">
+    <a href="https://github.com/Bytebandit-011/Predictive-Pulse-Harnessing-Machine-Learning-for-Blood-Pressure-Analysis" target="_blank" rel="noopener">View project on GitHub →</a>
+</div>
+
+<style>
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    color: #b0b0b0;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.hero-description p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+    background: linear-gradient(45deg, #764ba2, #667eea);
+}
+
+.project-info {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.how-to-use {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    text-align: center;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.step h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.step p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock content %}
